@@ -28,3 +28,5 @@ const ContentProvider = ({children}) =>{
         </ContentContext.Provider>
     )
 }
+
+export default ContentProvider
