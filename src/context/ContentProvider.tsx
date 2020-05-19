@@ -1,32 +1,36 @@
-import React, {useReducer, createContext} from 'react'
+import React, { useReducer, createContext } from 'react'
 
 export const ContentContext = createContext(null)
-
-const routeReducer = (state, action) =>{
-    switch(action.type){
-        case 'DESCRIPTION':
-            return {
-                state: "description"
-            }
-        case 'STACK':
-            return{
-                state: "stack"
-            }
-        case 'PORTFOLIO':
-            return{
-                state: 'portfolio'
-            }
-        default: new Error()
-    }
+interface State {
+	state: string
 }
 
-const ContentProvider = ({children}) =>{
-    const [route, dispatch] = useReducer(routeReducer, {state: "description"})
-    return(
-        <ContentContext.Provider value={{route, dispatch}}>
-            {children}
-        </ContentContext.Provider>
-    )
+const routeReducer = (state, action): State => {
+	switch (action.type) {
+		case 'DESCRIPTION':
+			return {
+				state: 'description',
+			}
+		case 'STACK':
+			return {
+				state: 'stack',
+			}
+		case 'PORTFOLIO':
+			return {
+				state: 'portfolio',
+			}
+		default:
+			new Error()
+	}
+}
+
+const ContentProvider = ({ children }): React.ReactNode => {
+	const [route, dispatch] = useReducer(routeReducer, { state: 'description' })
+	return (
+		<ContentContext.Provider value={{ route, dispatch }}>
+			{children}
+		</ContentContext.Provider>
+	)
 }
 
 export default ContentProvider
