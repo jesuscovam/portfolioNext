@@ -1,6 +1,6 @@
 import React, {useReducer, createContext} from 'react'
 
-export const ContentContext = createContext()
+export const ContentContext = createContext(null)
 
 const routeReducer = (state, action) =>{
     switch(action.type){
