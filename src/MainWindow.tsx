@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import Description from './Description'
 import Stack from './Stack'
+import Portfolio from './Portfolio'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -22,6 +23,7 @@ const MainWindow = (): JSX.Element => {
 		<Grid item component={Paper} className={classes.root}>
 			{route.state === 'description' && <Description />}
 			{route.state === 'stack' && <Stack />}
+			{route.state === 'portfolio' && <Portfolio />}
 		</Grid>
 	)
 }
