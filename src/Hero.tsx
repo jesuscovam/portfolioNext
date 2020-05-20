@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	image: {
-		width: theme.spacing(30),
 		[theme.breakpoints.up('md')]: {
 			marginLeft: theme.spacing(24),
 		},
