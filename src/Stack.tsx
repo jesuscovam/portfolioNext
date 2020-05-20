@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
-import Content from './Content'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import DesktopMacIcon from '@material-ui/icons/DesktopMac'
-import SmartphoneIcon from '@material-ui/icons/Smartphone'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
-import WebIcon from '@material-ui/icons/Web'
-import LanguageIcon from '@material-ui/icons/Language'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -42,7 +36,17 @@ const useStyles = makeStyles((theme) => ({
 	},
 }))
 
-const TechStack = ({ header, chars }) => {
+interface Char {
+	id: number
+	text: string
+}
+
+interface ContentProps {
+	chars: Char[]
+	header: string
+}
+
+const TechStack: React.FC<ContentProps> = ({ header, chars }) => {
 	const classes = useStyles()
 	return (
 		<section>
@@ -58,7 +62,7 @@ const TechStack = ({ header, chars }) => {
 
 const Stack = () => {
 	const classes = useStyles()
-	const [frontEnd] = useState([
+	const [stack] = useState([
 		{ id: 1, text: 'React' },
 		{ id: 2, text: 'Material UI' },
 		{ id: 3, text: 'NextJS' },
@@ -69,7 +73,7 @@ const Stack = () => {
 
 	return (
 		<main className={classes.root}>
-			<TechStack header="Stack" chars={frontEnd} />
+			<TechStack header="Stack" chars={stack} />
 		</main>
 	)
 }
