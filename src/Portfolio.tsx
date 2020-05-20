@@ -44,7 +44,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 }))
 
-const Project = ({ img, imgAlt, stack, url }) => {
+interface ProjectProps {
+	img: string
+	imgAlt: string
+	stack: string[]
+	url: string
+}
+
+const Project: React.FC<ProjectProps> = ({ img, imgAlt, stack, url }) => {
 	const classes = useStyles()
 	return (
 		<Link href={url} target="_blank" rel="noopener">
