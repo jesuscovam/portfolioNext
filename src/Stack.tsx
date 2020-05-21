@@ -72,6 +72,7 @@ const Stack = () => {
 		{ id: 4, text: 'TypeScript' },
 		{ id: 5, text: 'Jest' },
 		{ id: 6, text: 'Firebase' },
+		{ id: 7, text: 'Git' },
 	])
 
 	return (
