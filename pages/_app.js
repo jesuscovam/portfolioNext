@@ -20,11 +20,12 @@ export default function MyApp(props) {
 	return (
 		<React.Fragment>
 			<Head>
-				<title>My page</title>
+				<title>jcm.dev</title>
 				<meta
 					name="viewport"
 					content="minimum-scale=1, initial-scale=1, width=device-width"
 				/>
+				<meta name="Description" content="JS developer website" />
 			</Head>
 			<ThemeProvider theme={theme}>
 				<ContentProvider>
