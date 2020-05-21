@@ -26,6 +26,7 @@ export default function MyApp(props) {
 					content="minimum-scale=1, initial-scale=1, width=device-width"
 				/>
 				<meta name="Description" content="JS developer website" />
+				<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 			</Head>
 			<ThemeProvider theme={theme}>
 				<ContentProvider>
