@@ -1,5 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
+import { useFade } from './utils/customHooks'
+import { animated } from 'react-spring'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
@@ -33,9 +35,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Hero(): JSX.Element {
 	const classes = useStyles()
+	const { props } = useFade()
 	return (
 		<Grid item component={Paper} xs={12} md={6} className={classes.root} square>
-			<img src="/jcmdevwhite.png" alt="jesus" className={classes.image} />
+			<animated.div style={props}>
+				<img src="/jcmdevwhite.png" alt="jesus" className={classes.image} />
+			</animated.div>
 			<Typography className={classes.textHeader}>
 				Desarrollador Web <br />
 				@jesuscovam👨‍💻

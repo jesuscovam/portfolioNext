@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import { useFade } from './utils/customHooks'
+import { animated } from 'react-spring'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -48,15 +50,16 @@ interface ContentProps {
 
 const TechStack: React.FC<ContentProps> = ({ header, chars }) => {
 	const classes = useStyles()
+	const { props } = useFade()
 	return (
-		<section>
+		<animated.section style={props}>
 			<Typography className={classes.textHeader}>{header}</Typography>
 			{chars.map((item) => (
 				<Typography key={item.id} className={classes.charText}>
 					{item.text}
 				</Typography>
 			))}
-		</section>
+		</animated.section>
 	)
 }
 

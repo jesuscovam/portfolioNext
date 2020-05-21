@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
 import { Link } from '@material-ui/core'
+import { useFade } from './utils/customHooks'
+import { animated } from 'react-spring'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -52,11 +54,14 @@ interface ProjectProps {
 }
 
 const Project: React.FC<ProjectProps> = ({ img, imgAlt, stack, url }) => {
+	const { props } = useFade()
 	const classes = useStyles()
 	return (
 		<Link href={url} target="_blank" rel="noopener">
 			<Paper elevation={3} variant="elevation" className={classes.paper}>
-				<img src={img} alt={imgAlt} className={classes.img} />
+				<animated.div style={props}>
+					<img src={img} alt={imgAlt} className={classes.img} />
+				</animated.div>
 				<section className={classes.stackSection}>
 					{stack.map((tool, index) => (
 						<Typography key={index} className={classes.textStack}>
@@ -71,6 +76,7 @@ const Project: React.FC<ProjectProps> = ({ img, imgAlt, stack, url }) => {
 
 const Portfolio = () => {
 	const classes = useStyles()
+	const { props } = useFade()
 	const [projects] = useState([
 		{
 			id: 1,
@@ -82,18 +88,20 @@ const Portfolio = () => {
 		},
 	])
 	return (
-		<main className={classes.root}>
-			<Typography className={classes.textHeader}>Portfolio</Typography>
-			{projects.map((project) => (
-				<Project
-					key={project.id}
-					img={project.img}
-					imgAlt={project.imgAlt}
-					stack={project.stack}
-					url={project.url}
-				/>
-			))}
-		</main>
+		<animated.main style={props}>
+			<main className={classes.root}>
+				<Typography className={classes.textHeader}>Portfolio</Typography>
+				{projects.map((project) => (
+					<Project
+						key={project.id}
+						img={project.img}
+						imgAlt={project.imgAlt}
+						stack={project.stack}
+						url={project.url}
+					/>
+				))}
+			</main>
+		</animated.main>
 	)
 }
 
