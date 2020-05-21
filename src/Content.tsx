@@ -6,6 +6,9 @@ import SmartphoneIcon from '@material-ui/icons/Smartphone'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import WebIcon from '@material-ui/icons/Web'
 import LanguageIcon from '@material-ui/icons/Language'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import Link from '@material-ui/core/Link'
+import GitHubIcon from '@material-ui/icons/GitHub'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -33,6 +36,18 @@ const useStyles = makeStyles((theme) => ({
 	},
 	iconPlatform: {
 		display: 'flex',
+	},
+	social: {
+		display: 'flex',
+		justifyContent: 'center',
+		padding: theme.spacing(2),
+		margin: theme.spacing(4, 1, 1, 1),
+	},
+	iconButton: {
+		width: theme.spacing(5),
+		display: 'flex',
+		alignItems: 'start',
+		alignContent: 'start',
 	},
 }))
 
@@ -70,15 +85,38 @@ interface ContentProps {
 	header: string
 }
 
+const SocialAccounts = () => {
+	const classes = useStyles()
+	return (
+		<nav className={classes.social}>
+			<Link
+				href="https://www.linkedin.com/in/jesus-cova-262882171/"
+				target="_blank"
+				rel="noopener"
+			>
+				<LinkedInIcon color="primary" fontSize="large" />
+			</Link>
+			<Link
+				href="https://github.com/jesuscovam/"
+				target="_blank"
+				rel="noopener"
+			>
+				<GitHubIcon color="primary" fontSize="large" />
+			</Link>
+		</nav>
+	)
+}
+
 const Content: React.FC<ContentProps> = ({ chars, header }) => {
 	const classes = useStyles()
 	return (
-		<div className={classes.root}>
+		<main className={classes.root}>
 			<Typography className={classes.textHeader}>{header}</Typography>
 			{chars.map((char) => (
 				<DescriptionChar key={char.id} text={char.text} icon={char.icon} />
 			))}
-		</div>
+			<SocialAccounts />
+		</main>
 	)
 }
 
