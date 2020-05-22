@@ -8,6 +8,7 @@ import WebIcon from '@material-ui/icons/Web'
 import LanguageIcon from '@material-ui/icons/Language'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import Link from '@material-ui/core/Link'
+import Icon from '@material-ui/core/Icon'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
 const useStyles = makeStyles((theme) => ({
@@ -96,7 +97,9 @@ const SocialAccounts = () => {
 				component="button"
 				aria-label="linkedin"
 			>
-				<LinkedInIcon color="primary" fontSize="large" />
+				<Icon aria-label="linkedin">
+					<LinkedInIcon color="primary" fontSize="large" />
+				</Icon>
 			</Link>
 			<Link
 				href="https://github.com/jesuscovam/"
@@ -105,7 +108,9 @@ const SocialAccounts = () => {
 				component="button"
 				aria-label="github"
 			>
-				<GitHubIcon color="primary" fontSize="large" />
+				<Icon aria-label="github">
+					<GitHubIcon color="primary" fontSize="large" />
+				</Icon>
 			</Link>
 		</nav>
 	)
