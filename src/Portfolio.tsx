@@ -1,8 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
-import { Link } from '@material-ui/core'
 import { useFade } from './utils/customHooks'
 import { animated } from 'react-spring'
 
@@ -34,15 +32,19 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: 800,
 		color: theme.palette.primary.dark,
 		textAlign: 'center',
-		marginBottom: theme.spacing(3),
+		margin: theme.spacing(1, 0, 3),
 	},
 	img: {
 		height: theme.spacing(4.8),
 		width: theme.spacing(10),
-		marginLeft: theme.spacing(2),
+		margin: theme.spacing(0.2, 0, 0, 2),
 	},
 	textStack: {
 		fontSize: '1em',
+		margin: theme.spacing(0.2),
+	},
+	link: {
+		textDecoration: 'none',
 	},
 }))
 
@@ -58,20 +60,20 @@ const Project: React.FC<ProjectProps> = ({ img, imgAlt, stack, url }) => {
 	const { props } = useFade()
 	const classes = useStyles()
 	return (
-		<Link href={url} target="_blank" rel="noopener">
+		<a href={url} target="_blank" rel="noopener" className={classes.link}>
 			<Paper elevation={3} variant="elevation" className={classes.paper}>
 				<animated.div style={props}>
 					<img src={img} alt={imgAlt} className={classes.img} />
 				</animated.div>
 				<section className={classes.stackSection}>
 					{stack.map((tool, index) => (
-						<Typography key={index} className={classes.textStack}>
+						<p key={index} className={classes.textStack}>
 							{tool}
-						</Typography>
+						</p>
 					))}
 				</section>
 			</Paper>
-		</Link>
+		</a>
 	)
 }
 
@@ -83,19 +85,17 @@ const Portfolio: React.FC<PortfolioProps> = ({ projects }) => {
 	const classes = useStyles()
 	const { props } = useFade()
 	return (
-		<animated.main style={props}>
-			<main className={classes.root}>
-				<Typography className={classes.textHeader}>Portfolio</Typography>
-				{projects.map((project) => (
-					<Project
-						key={project.id}
-						img={project.img}
-						imgAlt={project.imgAlt}
-						stack={project.stack}
-						url={project.url}
-					/>
-				))}
-			</main>
+		<animated.main style={props} className={classes.root}>
+			<h1 className={classes.textHeader}>Portfolio</h1>
+			{projects.map((project) => (
+				<Project
+					key={project.id}
+					img={project.img}
+					imgAlt={project.imgAlt}
+					stack={project.stack}
+					url={project.url}
+				/>
+			))}
 		</animated.main>
 	)
 }
