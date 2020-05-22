@@ -16,7 +16,7 @@ export default function Index({ data }): JSX.Element {
 	return (
 		<Grid container className={classes.root}>
 			<Hero />
-			<Main chars={data.chars} projects={data.portfolio} stack={data.stack} />
+			<Main data={data} />
 		</Grid>
 	)
 }

@@ -63,7 +63,11 @@ const TechStack: React.FC<ContentProps> = ({ header, chars }) => {
 	)
 }
 
-const Stack = ({ stack }) => {
+interface StackProps {
+	stack: Char[]
+}
+
+const Stack: React.FC<StackProps> = ({ stack }) => {
 	const classes = useStyles()
 	return (
 		<main className={classes.root}>

@@ -79,36 +79,43 @@ interface Char {
 	icon: string
 }
 
+interface Social {
+	id: number
+	social: string
+	url: string
+	ariaLabel: string
+}
+
 interface ContentProps {
 	chars: Char[]
+	social: Social[]
 	header: string
 }
 
-const SocialAccounts = () => {
+const SocialAccounts = ({ social }) => {
 	const classes = useStyles()
 	return (
 		<nav className={classes.social}>
-			<a
-				href="https://www.linkedin.com/in/jesus-cova-262882171/"
-				target="_blank"
-				rel="noopener"
-				aria-label="open linkedin personal page"
-			>
-				<LinkedInIcon color="primary" fontSize="large" />
-			</a>
-			<a
-				href="https://github.com/jesuscovam/"
-				target="_blank"
-				rel="noopener"
-				aria-label="open github personal page"
-			>
-				<GitHubIcon color="primary" fontSize="large" />
-			</a>
+			{social.map((social) => (
+				<a
+					key={social.id}
+					href={social.url}
+					aria-label={social.ariaLabel}
+					target="_blank"
+					rel="noopener"
+				>
+					{social.social === 'github' ? (
+						<GitHubIcon color="primary" fontSize="large" />
+					) : (
+						<LinkedInIcon color="primary" fontSize="large" />
+					)}
+				</a>
+			))}
 		</nav>
 	)
 }
 
-const Content: React.FC<ContentProps> = ({ chars, header }) => {
+const Content: React.FC<ContentProps> = ({ chars, social, header }) => {
 	const classes = useStyles()
 	return (
 		<main className={classes.root}>
@@ -116,7 +123,7 @@ const Content: React.FC<ContentProps> = ({ chars, header }) => {
 			{chars.map((char) => (
 				<DescriptionChar key={char.id} text={char.text} icon={char.icon} />
 			))}
-			<SocialAccounts />
+			<SocialAccounts social={social} />
 		</main>
 	)
 }

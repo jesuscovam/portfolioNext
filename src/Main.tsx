@@ -15,12 +15,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 }))
 
-const Main = ({ chars, projects, stack }): JSX.Element => {
+const Main = ({ data }): JSX.Element => {
 	const classes = useStyles()
 	return (
 		<Grid component={Paper} item xs={12} md={6} square className={classes.main}>
 			<MainNav />
-			<MainWindow chars={chars} projects={projects} stack={stack} />
+			<MainWindow {...data} />
 		</Grid>
 	)
 }

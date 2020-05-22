@@ -27,5 +27,19 @@
 			"imgAlt": "Logo tulis",
 			"url": "https://tulis.app"
 		}
+	],
+	"social": [
+		{
+			"id": 1,
+			"social": "linkedin",
+			"url": "https://www.linkedin.com/in/jesus-cova-262882171/",
+			"ariaLabel": "open linkedin personal page"
+		},
+		{
+			"id": 2,
+			"social": "github",
+			"url": "https://github.com/jesuscovam/",
+			"ariaLabel": "open github personal page"
+		}
 	]
 }

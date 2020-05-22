@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 interface ProjectProps {
+	id?: number
 	img: string
 	imgAlt: string
 	stack: string[]
@@ -74,7 +75,11 @@ const Project: React.FC<ProjectProps> = ({ img, imgAlt, stack, url }) => {
 	)
 }
 
-const Portfolio = ({ projects }) => {
+interface PortfolioProps {
+	projects: ProjectProps[]
+}
+
+const Portfolio: React.FC<PortfolioProps> = ({ projects }) => {
 	const classes = useStyles()
 	const { props } = useFade()
 	return (
