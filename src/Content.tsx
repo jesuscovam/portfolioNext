@@ -93,6 +93,7 @@ const SocialAccounts = () => {
 				href="https://www.linkedin.com/in/jesus-cova-262882171/"
 				target="_blank"
 				rel="noopener"
+				component="button"
 				aria-label="linkedin"
 			>
 				<LinkedInIcon color="primary" fontSize="large" />
@@ -101,6 +102,7 @@ const SocialAccounts = () => {
 				href="https://github.com/jesuscovam/"
 				target="_blank"
 				rel="noopener"
+				component="button"
 				aria-label="github"
 			>
 				<GitHubIcon color="primary" fontSize="large" />
