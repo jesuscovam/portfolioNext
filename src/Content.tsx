@@ -118,7 +118,7 @@ const Content: React.FC<ContentProps> = ({ chars, social, header }) => {
 	const classes = useStyles()
 	return (
 		<main className={classes.root}>
-			<p className={classes.textHeader}>{header}</p>
+			<h1 className={classes.textHeader}>{header}</h1>
 			{chars.map((char) => (
 				<DescriptionChar key={char.id} text={char.text} icon={char.icon} />
 			))}

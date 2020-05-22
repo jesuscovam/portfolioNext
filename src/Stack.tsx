@@ -52,7 +52,7 @@ const TechStack: React.FC<ContentProps> = ({ header, chars }) => {
 	const { props } = useFade()
 	return (
 		<animated.section style={props}>
-			<p className={classes.textHeader}>{header}</p>
+			<h1 className={classes.textHeader}>{header}</h1>
 			{chars.map((item) => (
 				<p key={item.id} className={classes.charText}>
 					{item.text}
