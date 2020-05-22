@@ -92,29 +92,17 @@ const SocialAccounts = () => {
 				href="https://www.linkedin.com/in/jesus-cova-262882171/"
 				target="_blank"
 				rel="noopener"
-				aria-label="linkedin personal page"
-				aria-labeledby="linkedin personal page"
+				aria-label="open linkedin personal page"
 			>
-				<LinkedInIcon
-					color="primary"
-					fontSize="large"
-					aria-label="linkedin personal page"
-					aria-labeledby="linkedin personal page"
-				/>
+				<LinkedInIcon color="primary" fontSize="large" />
 			</a>
 			<a
 				href="https://github.com/jesuscovam/"
 				target="_blank"
 				rel="noopener"
-				aria-label="github personal page"
-				aria-labeledby="github personal page"
+				aria-label="open github personal page"
 			>
-				<GitHubIcon
-					color="primary"
-					fontSize="large"
-					aria-label="github personal page"
-					aria-labeledby="github personal page"
-				/>
+				<GitHubIcon color="primary" fontSize="large" />
 			</a>
 		</nav>
 	)
