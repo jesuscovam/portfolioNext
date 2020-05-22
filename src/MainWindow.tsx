@@ -16,14 +16,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 }))
 
-const MainWindow = (): JSX.Element => {
+const MainWindow = ({ chars, projects, stack }): JSX.Element => {
 	const { route } = useContext(ContentContext)
 	const classes = useStyles()
 	return (
 		<Grid item component={Paper} className={classes.root}>
-			{route.state === 'description' && <Description />}
-			{route.state === 'stack' && <Stack />}
-			{route.state === 'portfolio' && <Portfolio />}
+			{route.state === 'description' && <Description chars={chars} />}
+			{route.state === 'stack' && <Stack stack={stack} />}
+			{route.state === 'portfolio' && <Portfolio projects={projects} />}
 		</Grid>
 	)
 }

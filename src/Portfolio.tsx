@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
@@ -74,19 +74,9 @@ const Project: React.FC<ProjectProps> = ({ img, imgAlt, stack, url }) => {
 	)
 }
 
-const Portfolio = () => {
+const Portfolio = ({ projects }) => {
 	const classes = useStyles()
 	const { props } = useFade()
-	const [projects] = useState([
-		{
-			id: 1,
-			name: 'Tulis',
-			stack: ['React', 'Material UI', 'Firebase'],
-			img: '/tulis.png',
-			imgAlt: 'Logo tulis',
-			url: 'https://tulis.app',
-		},
-	])
 	return (
 		<animated.main style={props}>
 			<main className={classes.root}>

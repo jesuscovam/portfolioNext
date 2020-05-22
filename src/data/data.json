@@ -1,0 +1,31 @@
+{
+	"chars": [
+		{
+			"id": 1,
+			"text": "Aplicaciones para Desktop y Movil",
+			"icon": "platform"
+		},
+		{ "id": 2, "text": "E-Commerce", "icon": "ecommerce" },
+		{ "id": 3, "text": "Panel de Administrador", "icon": "panel" },
+		{ "id": 4, "text": "SEO", "icon": "seo" }
+	],
+	"stack": [
+		{ "id": 1, "text": "React" },
+		{ "id": 2, "text": "Material UI" },
+		{ "id": 3, "text": "NextJS" },
+		{ "id": 4, "text": "TypeScript" },
+		{ "id": 5, "text": "Jest" },
+		{ "id": 6, "text": "Firebase" },
+		{ "id": 7, "text": "Git" }
+	],
+	"portfolio": [
+		{
+			"id": 1,
+			"name": "Tulis",
+			"stack": ["React", "Material UI", "Firebase"],
+			"img": "/tulis.png",
+			"imgAlt": "Logo tulis",
+			"url": "https://tulis.app"
+		}
+	]
+}

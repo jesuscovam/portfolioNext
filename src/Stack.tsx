@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import { useFade } from './utils/customHooks'
@@ -63,18 +63,8 @@ const TechStack: React.FC<ContentProps> = ({ header, chars }) => {
 	)
 }
 
-const Stack = () => {
+const Stack = ({ stack }) => {
 	const classes = useStyles()
-	const [stack] = useState([
-		{ id: 1, text: 'React' },
-		{ id: 2, text: 'Material UI' },
-		{ id: 3, text: 'NextJS' },
-		{ id: 4, text: 'TypeScript' },
-		{ id: 5, text: 'Jest' },
-		{ id: 6, text: 'Firebase' },
-		{ id: 7, text: 'Git' },
-	])
-
 	return (
 		<main className={classes.root}>
 			<TechStack header="Stack" chars={stack} />
