@@ -7,8 +7,6 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import WebIcon from '@material-ui/icons/Web'
 import LanguageIcon from '@material-ui/icons/Language'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import Link from '@material-ui/core/Link'
-import Icon from '@material-ui/core/Icon'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
 const useStyles = makeStyles((theme) => ({
@@ -90,28 +88,22 @@ const SocialAccounts = () => {
 	const classes = useStyles()
 	return (
 		<nav className={classes.social}>
-			<Link
+			<a
 				href="https://www.linkedin.com/in/jesus-cova-262882171/"
 				target="_blank"
 				rel="noopener"
-				component="button"
-				aria-label="linkedin"
+				aria-label="linkedin personal page"
 			>
-				<Icon aria-label="linkedin">
-					<LinkedInIcon color="primary" fontSize="large" />
-				</Icon>
-			</Link>
-			<Link
+				<LinkedInIcon color="primary" fontSize="large" />
+			</a>
+			<a
 				href="https://github.com/jesuscovam/"
 				target="_blank"
 				rel="noopener"
-				component="button"
-				aria-label="github"
+				aria-label="github personal page"
 			>
-				<Icon aria-label="github">
-					<GitHubIcon color="primary" fontSize="large" />
-				</Icon>
-			</Link>
+				<GitHubIcon color="primary" fontSize="large" />
+			</a>
 		</nav>
 	)
 }
