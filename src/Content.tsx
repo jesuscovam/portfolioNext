@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: 800,
 		color: theme.palette.primary.dark,
 		textAlign: 'center',
-		margin: theme.spacing(0, 0, 2),
+		margin: theme.spacing(0, 0, 3),
 	},
 	charItem: {
 		display: 'flex',

@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
 import { useFade } from './utils/customHooks'
 import { animated } from 'react-spring'
 
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: 800,
 		color: theme.palette.primary.dark,
 		textAlign: 'center',
-		marginBottom: theme.spacing(3),
+		margin: theme.spacing(0, 0, 3),
 	},
 	charItem: {
 		display: 'flex',
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		fontSize: '1.2em',
 		color: theme.palette.primary.dark,
-		margin: theme.spacing(1),
+		margin: theme.spacing(0, 1, 1),
 	},
 	iconPlatform: {
 		display: 'flex',
@@ -53,11 +52,11 @@ const TechStack: React.FC<ContentProps> = ({ header, chars }) => {
 	const { props } = useFade()
 	return (
 		<animated.section style={props}>
-			<Typography className={classes.textHeader}>{header}</Typography>
+			<p className={classes.textHeader}>{header}</p>
 			{chars.map((item) => (
-				<Typography key={item.id} className={classes.charText}>
+				<p key={item.id} className={classes.charText}>
 					{item.text}
-				</Typography>
+				</p>
 			))}
 		</animated.section>
 	)
