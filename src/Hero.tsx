@@ -4,7 +4,6 @@ import { useFade } from './utils/customHooks'
 import { animated } from 'react-spring'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -41,10 +40,10 @@ export default function Hero(): JSX.Element {
 			<animated.div style={props}>
 				<img src="/jcmdevwhite.png" alt="jesus" className={classes.image} />
 			</animated.div>
-			<Typography className={classes.textHeader}>
+			<p className={classes.textHeader}>
 				Desarrollador Web <br />
 				@jesuscovam👨‍💻
-			</Typography>
+			</p>
 		</Grid>
 	)
 }

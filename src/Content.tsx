@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
 import DesktopMacIcon from '@material-ui/icons/DesktopMac'
 import SmartphoneIcon from '@material-ui/icons/Smartphone'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: 800,
 		color: theme.palette.primary.dark,
 		textAlign: 'center',
-		marginBottom: theme.spacing(3),
+		margin: theme.spacing(0, 0, 2),
 	},
 	charItem: {
 		display: 'flex',
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: 300,
 		fontSize: '1.2em',
 		color: theme.palette.primary.dark,
-		marginRight: theme.spacing(1),
+		margin: theme.spacing(0, 1),
 	},
 	iconPlatform: {
 		display: 'flex',
@@ -64,7 +63,7 @@ const DescriptionChar = ({ text, icon }): JSX.Element => {
 	const classes = useStyles()
 	return (
 		<div className={classes.charItem}>
-			<Typography className={classes.charText}>{text}</Typography>
+			<p className={classes.charText}>{text}</p>
 			{icon === 'platform' && <IconPlatform />}
 			{icon === 'ecommerce' && <ShoppingCartIcon color="primary" />}
 			{icon === 'panel' && <WebIcon color="primary" />}
@@ -119,7 +118,7 @@ const Content: React.FC<ContentProps> = ({ chars, social, header }) => {
 	const classes = useStyles()
 	return (
 		<main className={classes.root}>
-			<Typography className={classes.textHeader}>{header}</Typography>
+			<p className={classes.textHeader}>{header}</p>
 			{chars.map((char) => (
 				<DescriptionChar key={char.id} text={char.text} icon={char.icon} />
 			))}
