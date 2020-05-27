@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	navText: {
-		fontWeight: 500,
+		fontWeight: 300,
 	},
 }))
 
