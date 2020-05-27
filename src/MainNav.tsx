@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		width: theme.spacing(50),
+		padding: theme.spacing(0.2),
 		border: '1px solid #eaeaea',
 		color: theme.palette.primary.dark,
 		borderRadius: '10px',
