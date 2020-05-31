@@ -13,7 +13,6 @@
 		{ "id": 1, "text": "React" },
 		{ "id": 2, "text": "Material UI" },
 		{ "id": 3, "text": "NextJS" },
-		{ "id": 4, "text": "TypeScript" },
 		{ "id": 5, "text": "Jest" },
 		{ "id": 6, "text": "Firebase" },
 		{ "id": 7, "text": "Git" }
