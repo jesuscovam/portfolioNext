@@ -11,9 +11,10 @@
 	],
 	"stack": [
 		{ "id": 1, "text": "React" },
-		{ "id": 2, "text": "Material UI" },
-		{ "id": 3, "text": "NextJS" },
-		{ "id": 5, "text": "Jest" },
+		{ "id": 2, "text": "Node" },
+		{ "id": 5, "text": "Express" },
+		{ "id": 3, "text": "Next.js" },
+		{ "id": 3, "text": "MongoDB" },
 		{ "id": 6, "text": "Firebase" },
 		{ "id": 7, "text": "Git" }
 	],
