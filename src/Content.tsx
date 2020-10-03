@@ -1,73 +1,26 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import DesktopMacIcon from '@material-ui/icons/DesktopMac'
-import SmartphoneIcon from '@material-ui/icons/Smartphone'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
-import WebIcon from '@material-ui/icons/Web'
-import LanguageIcon from '@material-ui/icons/Language'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import GitHubIcon from '@material-ui/icons/GitHub'
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		display: 'flex',
-		flexDirection: 'column',
-		padding: theme.spacing(3),
-		width: theme.spacing(50),
-	},
-	textHeader: {
-		fontSize: '2em',
-		fontWeight: 800,
-		color: theme.palette.primary.dark,
-		textAlign: 'center',
-		margin: theme.spacing(0, 0, 3),
-	},
-	charItem: {
-		display: 'flex',
-		margin: theme.spacing(1),
-	},
-	charText: {
-		fontWeight: 300,
-		fontSize: '1.2em',
-		color: theme.palette.primary.dark,
-		margin: theme.spacing(0, 1),
-	},
-	iconPlatform: {
-		display: 'flex',
-	},
-	social: {
-		display: 'flex',
-		justifyContent: 'center',
-		padding: theme.spacing(2),
-		margin: theme.spacing(4, 1, 1, 1),
-	},
-	iconButton: {
-		width: theme.spacing(5),
-		display: 'flex',
-		alignItems: 'start',
-		alignContent: 'start',
-	},
-}))
-
-const IconPlatform = () => {
-	const classes = useStyles()
-	return (
-		<div className={classes.iconPlatform}>
-			<DesktopMacIcon color="primary" />
-			<SmartphoneIcon color="primary" />
-		</div>
-	)
-}
+import { AiOutlineMobile, AiOutlineCloudServer } from 'react-icons/ai'
+import { BsLock } from 'react-icons/bs'
+import { VscGithubAlt } from 'react-icons/vsc'
+import { HiOutlineUserAdd } from 'react-icons/hi'
+import { RiLinkedinLine } from 'react-icons/ri'
+import { CgInstagram } from 'react-icons/cg'
 
 const DescriptionChar = ({ text, icon }): JSX.Element => {
-	const classes = useStyles()
 	return (
-		<div className={classes.charItem}>
-			<p className={classes.charText}>{text}</p>
-			{icon === 'platform' && <IconPlatform />}
-			{icon === 'ecommerce' && <ShoppingCartIcon color="primary" />}
-			{icon === 'panel' && <WebIcon color="primary" />}
-			{icon === 'seo' && <LanguageIcon color="primary" />}
+		<div className="flex items-base my-1 mx-10 p-3 px-5 text-gray-600 rounded-lg transition duration-300 hover:bg-gray-300 hover:text-gray-500">
+			{icon === 'platform' && (
+				<AiOutlineMobile className="text-indigo-400 text-2xl" />
+			)}
+			{icon === 'auth' && <BsLock className="text-indigo-400 text-2xl" />}
+			{icon === 'api' && (
+				<AiOutlineCloudServer className="text-indigo-400 text-2xl" />
+			)}
+			{icon === 'seo' && (
+				<HiOutlineUserAdd className="text-indigo-400 text-2xl" />
+			)}
+			<p className="ml-4 mr-8 text-lg">{text}</p>
 		</div>
 	)
 }
@@ -92,9 +45,8 @@ interface ContentProps {
 }
 
 const SocialAccounts = ({ social }) => {
-	const classes = useStyles()
 	return (
-		<nav className={classes.social}>
+		<nav className="flex items-center justify-center mt-16">
 			{social.map((social) => (
 				<a
 					key={social.id}
@@ -102,12 +54,11 @@ const SocialAccounts = ({ social }) => {
 					aria-label={social.ariaLabel}
 					target="_blank"
 					rel="noopener"
+					className="mx-3 p-3 rounded-full text-indigo-500 text-2xl transition duration-300  hover:bg-indigo-100 "
 				>
-					{social.social === 'github' ? (
-						<GitHubIcon color="primary" fontSize="large" />
-					) : (
-						<LinkedInIcon color="primary" fontSize="large" />
-					)}
+					{social.social === 'github' && <VscGithubAlt />}
+					{social.social === 'linkedin' && <RiLinkedinLine />}
+					{social.social === 'instagram' && <CgInstagram />}
 				</a>
 			))}
 		</nav>
@@ -115,10 +66,9 @@ const SocialAccounts = ({ social }) => {
 }
 
 const Content: React.FC<ContentProps> = ({ chars, social, header }) => {
-	const classes = useStyles()
 	return (
-		<main className={classes.root}>
-			<h1 className={classes.textHeader}>{header}</h1>
+		<main className="w-full pb-2 pt-6">
+			<h1 className="text-center text-gray-800 text-2xl font-bold">{header}</h1>
 			{chars.map((char) => (
 				<DescriptionChar key={char.id} text={char.text} icon={char.icon} />
 			))}

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 const Main = ({ data }): JSX.Element => {
 	const classes = useStyles()
 	return (
-		<Grid component={Paper} item xs={12} md={6} square className={classes.main}>
+		<Grid item xs={12} md={6} className={classes.main}>
 			<MainNav />
 			<MainWindow {...data} />
 		</Grid>

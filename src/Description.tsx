@@ -7,7 +7,7 @@ const Description = ({ chars, social }) => {
 	const { props } = useFade()
 	return (
 		<animated.div style={props}>
-			<Content chars={chars} social={social} header="Servicios" />
+			<Content chars={chars} social={social} header="Services" />
 		</animated.div>
 	)
 }

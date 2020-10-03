@@ -2,21 +2,18 @@
 	"chars": [
 		{
 			"id": 1,
-			"text": "Aplicaciones para Desktop y Movil",
+			"text": "Web Apps and Native Apps",
 			"icon": "platform"
 		},
-		{ "id": 2, "text": "E-Commerce", "icon": "ecommerce" },
-		{ "id": 3, "text": "Panel de Administrador", "icon": "panel" },
-		{ "id": 4, "text": "SEO", "icon": "seo" }
+		{ "id": 2, "text": "Authentication", "icon": "auth" },
+		{ "id": 3, "text": "API", "icon": "api" },
+		{ "id": 4, "text": "SEO & Aria-Label", "icon": "seo" }
 	],
 	"stack": [
-		{ "id": 1, "text": "React/Context/Next" },
-		{ "id": 3, "text": "Vue/Vuex" },
-		{ "id": 2, "text": "Node" },
-		{ "id": 5, "text": "Express" },
-		{ "id": 3, "text": "MongoDB" },
-		{ "id": 6, "text": "Firebase" },
-		{ "id": 7, "text": "Git" }
+		{ "id": 1, "text": "Render & State: React" },
+		{ "id": 2, "text": "API: AWS App Sync" },
+		{ "id": 3, "text": "Auth: AWS Cognito" },
+		{ "id": 4, "text": "Code Splitting & SSR: Next" }
 	],
 	"portfolio": [
 		{
@@ -40,6 +37,12 @@
 			"social": "github",
 			"url": "https://github.com/jesuscovam/",
 			"ariaLabel": "open github personal page"
+		},
+		{
+			"id": 3,
+			"social": "instagram",
+			"url": "https://instagram.com/midnightouizard/",
+			"ariaLabel": "open instagram company page"
 		}
 	]
 }
