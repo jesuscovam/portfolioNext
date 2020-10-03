@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import ContentProvider from '../src/context/ContentProvider'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from '../src/theme'
+import '../styles/tailwind.css'
 
 export default function MyApp(props) {
 	const { Component, pageProps } = props

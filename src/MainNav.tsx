@@ -40,36 +40,25 @@ interface NavItemProps {
 	onClick: () => void
 }
 
-const NavItem: React.FC<NavItemProps> = ({ text, onClick }) => {
+const NavItem: React.FC<NavItemProps> = ({ text, onClick, children }) => {
 	const classes = useStyles()
 	return (
-		<IconButton className={classes.navItem} onClick={onClick}>
-			{text === 'Descripción' && <DescriptionIcon color="primary" />}
-			{text === 'Stack' && <CodeIcon color="primary" />}
-			{text === 'Portfolio' && <FolderIcon color="primary" />}
+		<span className="flex items-center p-3" onClick={onClick}>
+			{children}
 			<h2 className={classes.navText}>{text}</h2>
-		</IconButton>
+		</span>
 	)
 }
 
 const MainNav = (): JSX.Element => {
-	const [navItems] = useState([
-		{ id: 1, text: 'Descripción', param: 'DESCRIPTION' },
-		{ id: 2, text: 'Stack', param: 'STACK' },
-		{ id: 3, text: 'Portfolio', param: 'PORTFOLIO' },
-	])
 	const classes = useStyles()
 	const { dispatch } = useContext(ContentContext)
 	const changeNav = (component: string) => dispatch({ type: component })
 	return (
 		<nav className={classes.nav}>
-			{navItems.map((item) => (
-				<NavItem
-					key={item.id}
-					text={item.text}
-					onClick={() => changeNav(item.param)}
-				/>
-			))}
+			<NavItem text="Descripción" onClick={() => changeNav('DESCRIPTION')} />
+			<NavItem text="Stack" onClick={() => changeNav('STACK')} />
+			<NavItem text="Portfolio" onClick={() => changeNav('PORTFOLIO')} />
 		</nav>
 	)
 }
